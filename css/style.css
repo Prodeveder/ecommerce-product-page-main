@@ -1,0 +1,414 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face {
+  font-family: kumbh;
+  src: url(/assets/fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf);
+}
+
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --Primary: hsl(26, 100%, 55%);
+  --Secondary: hsl(25, 100%, 94%);
+
+  /* ### Neutral */
+
+  --Very-dark-blue: #1d2025;
+  --Dark-grayish-blue: #68707d;
+  --Grayish-blue: #b6bcc8;
+  --Light-grayish-blue: #f7f8fd;
+  --White: #ffffff;
+  --Black: #000000bf; /* (with 75% opacity for light box background) */
+
+  /* CUstom Variables  */
+  --mainWidth: 80%;
+  --font: kumbh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: var(--font);
+}
+
+/* The Button  */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--Primary);
+
+  color: var(--White);
+  font-weight: bold;
+  width: 90%;
+  padding: 15px 0px;
+  border-radius: 10px;
+  margin: 0px 15px 25px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+/* The Navbar Desktop */
+
+.navbar {
+  margin: 20px;
+  position: relative;
+  padding: 20px 0px 30px 0px;
+  width: var(--mainWidth);
+  height: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0px -2px var(--Light-grayish-blue);
+}
+
+.navbar__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__brand {
+  padding-right: 3rem;
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar__links li {
+  padding-inline: 1rem;
+}
+
+.navbar__links li a {
+  padding-bottom: 2rem;
+  text-decoration: none;
+  color: var(--Grayish-blue);
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar__links li a:hover {
+  box-shadow: inset 0px -3px var(--Primary);
+  color: var(--Very-dark-blue);
+}
+
+/* Navbar Mobile  */
+
+.mobile__navbar__container {
+  display: none;
+  z-index: 50;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  height: 100vh;
+  background: var(--Black);
+  padding: 20px 0px 0px 0px;
+  animation: slow 0.3s ease-out;
+}
+
+@keyframes slow {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile__navbar {
+  position: relative;
+  top: -20px;
+  width: 35%;
+  min-width: 245px;
+  height: 100%;
+  background: var(--White);
+  padding: 20px 20px 0px 2rem;
+}
+
+.menu {
+  padding: 40px 0px 0px 0px;
+  list-style: none;
+}
+
+.menu li {
+  padding: 15px 0px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--Very-dark-blue);
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.menu li a:hover {
+  color: var(--Primary);
+}
+
+/* The Chart 🛍  */
+.chart__container {
+  position: relative;
+}
+
+.chart__counter {
+  background: var(--Primary);
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0px 1px;
+  color: var(--White);
+  letter-spacing: 1px;
+  border-radius: 20px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.chart__icon {
+  width: auto;
+  cursor: pointer;
+}
+
+.button-checkout {
+  display: flex;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.chart {
+  position: relative;
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: -100%;
+  border-radius: 10px;
+  width: 310px;
+  height: auto;
+  background: var(--White);
+
+  box-shadow: 0 8px 15px -10px rgba(0, 0, 0, 0.4),
+    /*Bottom*/ 8px 0 10px -10px rgba(0, 0, 0, 0.4),
+    /*Left*/ -8px 0 10px -10px rgba(0, 0, 0, 0.4), /*Right*/ 0 0 0 transparent; /*top*/
+}
+
+.chart-holder {
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    width: 300px;
+    height: 20px;
+    background: transparent;
+}
+
+.chart__container:hover ~ .chart {
+  display: block;
+}
+
+.chart-holder:hover ~ .chart {
+    display: block;
+}
+.chart:hover {
+  display: block;
+}
+
+.chart__title {
+  padding: 15px 15px 20px 15px;
+  box-shadow: inset 0px -2px var(--Light-grayish-blue);
+  font-weight: bold;
+  color: var(--Very-dark-blue);
+  cursor: pointer;
+}
+
+.chart__items {
+  width: 90%;
+  height: auto;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chart__item {
+  width: 100%;
+  height: 50px;
+
+  display: grid;
+  grid-template-columns: 20% 65% 5%;
+  gap: 5%;
+}
+
+.item__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  cursor: pointer;
+  /* #NOTES > Be able to open the light box from chart image*/
+}
+
+.item__detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item__price,
+.item__name,
+.item__quantity {
+  color: var(--Dark-grayish-blue);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.item__total {
+  color: var(--Very-dark-blue);
+  font-weight: 600;
+}
+.item__calculations {
+  display: inherit;
+}
+
+.item__delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__icon__container {
+  display: none;
+  padding-right: 1rem;
+}
+
+.close__navbar {
+  padding: 20px 0px 0px 0px;
+}
+
+/* Various Icons and stuff  */
+.menu li a,
+.delete__icon use,
+.chart__img path,
+.close__icon path,
+.menu__icon path {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* .menu__icon,
+.close__icon {
+  width: 30px;
+  height: 30px;
+} */
+
+/* .menu__icon path,
+.close__icon path {
+  transform: scale(2);
+} */
+.close__icon path:hover,
+.menu__icon path:hover,
+.chart__img path:hover,
+.delete__icon use:hover {
+  fill: var(--Primary);
+}
+
+.empty__chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--Dark-grayish-blue);
+  font-weight: 500;
+  width: 90%;
+  padding: 40px 0px;
+  margin: 0px 15px 25px 15px;
+
+  display: none;
+}
+
+.empty__chart:hover {
+  opacity: 0.6;
+}
+
+.profile {
+  margin-left: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 100%;
+}
+
+.profile__img {
+  height: 100%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.profile__img:hover {
+  border: 2px solid var(--Primary);
+}
+
+
+
+/* Fixing the overlapping elements  */
+@media (max-width:1000px) {
+    .chart {
+        right: -90%;
+    }
+}
+
+/* Table 950px  */
+@media (max-width: 950px) {
+    .chart {
+        right: 10%;
+    }
+  .navbar__links {
+    display: none;
+  }
+  /* .mobile__navbar__container {
+    display: flex;
+  } */
+  .menu__icon__container {
+    display: flex;
+  }
+  .navbar {
+    width: 100%;
+    padding: 10px 0px 30px 0px;
+  }
+  .menu__icon__container {
+    padding: 0px 1rem 0px 2rem;
+  }
+  .profile {
+    padding-right: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Mobile 500px  */
+@media (max-width: 500px) {
+}
