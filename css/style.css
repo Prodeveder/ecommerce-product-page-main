@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: kumbh;
-  src: url(../assets/fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf);
+  src: url(../assets/fonts/KumbhSans-VariableFont_YOPQ\wght.ttf);
 }
 
 :root {
@@ -61,7 +61,7 @@ body {
 /* The Navbar Desktop */
 
 .navbar {
-  margin: 20px;
+  margin: 20px 20px 75px 20px;
   position: relative;
   padding: 20px 0px 30px 0px;
   width: var(--mainWidth);
@@ -202,6 +202,8 @@ body {
 }
 
 .chart {
+  z-index: 300;
+
   position: relative;
   display: none;
   position: absolute;
@@ -218,12 +220,12 @@ body {
 }
 
 .chart-holder {
-    position: absolute;
-    top: -20px;
-    left: 0px;
-    width: 300px;
-    height: 20px;
-    background: transparent;
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  width: 300px;
+  height: 20px;
+  background: transparent;
 }
 
 .chart__container:hover ~ .chart {
@@ -231,7 +233,7 @@ body {
 }
 
 .chart-holder:hover ~ .chart {
-    display: block;
+  display: block;
 }
 .chart:hover {
   display: block;
@@ -373,20 +375,187 @@ body {
   border: 2px solid var(--Primary);
 }
 
+/* The Product  */
+.product__container {
+  width: calc(var(--mainWidth) * 0.9);
+  height: auto;
+  background: transparent;
+  cursor: pointer;
 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.product__images {
+  width: 100%;
+  height: 100%;
+}
+
+.product__details {
+  width: 100%;
+  height: 100%;
+  background: blue;
+}
+
+.product__image__container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+.main__image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.main__image__controls {
+  width: 112%;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: -6%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.__controls {
+  background: var(--White);
+  width: 60px;
+  height: 100%;
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.__controls img {
+  width: 1.2rem;
+}
+
+.__controls:hover {
+  opacity: 0.8;
+}
+
+.image__thumbnails {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnail__img,
+.main__img {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.thumbnail__img:hover {
+  opacity: 0.5;
+  border: 2px solid var(--Primary);
+}
+
+.main__img:hover {
+  border: 2px solid var(--Primary);
+}
+
+.thumbnail__img.active {
+  opacity: 0.5;
+  border: 2px solid var(--Primary);
+}
+
+.main__img {
+  transition: opacity 1s ease-in-out;
+  /* #NOTES : Add animation when user clicks on image on slider  */
+}
+
+@keyframes image {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* The Light Box  */
+.light__box {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background: #000000bf;
+  z-index: 100;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.light__box__container {
+  width: 500px;
+  height: 700px;
+}
+
+.close__light__box {
+  width: 100%;
+  background: 100%;
+  text-align: right;
+  padding: 0px 0px 15px 0px;
+}
+
+.close__box {
+  fill: white;
+  transform: scale(2);
+}
+
+.light--box {
+  height: 80%;
+}
+
+.light--box--thumbnail {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light--box--thumbnail .thumbnail {
+  width: 70px;
+  height: 100%;
+}
 
 /* Fixing the overlapping elements  */
-@media (max-width:1000px) {
-    .chart {
-        right: -90%;
-    }
+@media (max-width: 1000px) {
+  .chart {
+    right: -90%;
+  }
+  /* #NOTES > THe Mobile chart will have to open when you click on it  */
 }
 
 /* Table 950px  */
 @media (max-width: 950px) {
-    .chart {
-        right: 10%;
-    }
+  .chart {
+    right: 10%;
+  }
   .navbar__links {
     display: none;
   }
@@ -399,6 +568,7 @@ body {
   .navbar {
     width: 100%;
     padding: 10px 0px 30px 0px;
+    margin: 20px 20px 0px 20px;
   }
   .menu__icon__container {
     padding: 0px 1rem 0px 2rem;
@@ -406,6 +576,43 @@ body {
   .profile {
     padding-right: 2rem;
     height: 2rem;
+  }
+
+  /* The Product  */
+  .product__container {
+    width: 100%;
+    height: auto;
+    background: transparent;
+    cursor: pointer;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+
+  .product__image__container {
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .main__img {
+    width: 100%;
+    height: 450px;
+    border-radius: 0px;
+    border: none;
+    object-fit: cover;
+  }
+
+  .main__img:hover {
+    border: none;
+  }
+
+  .image__thumbnails {
+    display: none;
   }
 }
 
