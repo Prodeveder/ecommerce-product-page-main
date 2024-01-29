@@ -22,7 +22,12 @@
       <div class="mobile__navbar__container">
         <div class="mobile__navbar">
           <div class="close__navbar">
-            <svg class="close__icon" width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="close__icon"
+              width="14"
+              height="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
                 fill="#69707D"
@@ -137,6 +142,115 @@
           <div class="button button-checkout">Checkout</div>
         </div>
       </div>
+    </div>
+
+    <div class="product__container">
+      <div class="light__box">
+        <div class="light__box__container">
+          <div class="close__light__box">
+            <svg  class="closeSVG" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+              <path
+                class="close__box"
+                d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                fill="#69707D"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div class="product__images">
+            <div class="product__image__container light--box">
+              <div class="main__image">
+                <img
+                  src="assets/images/image-product-1.jpg"
+                  alt=""
+                  class="main__img"
+                />
+                <div class="main__image__controls">
+                  <div class="__controls" onclick="changeSlide('previous')">
+                    <img src="assets/icons/icon-previous.svg" alt="">
+                  </div>
+                  <div class="__controls" onclick="changeSlide('next')">
+                    <img src="assets/icons/icon-next.svg" alt="">
+                  </div>
+
+                </div>
+              </div>
+              <div class="image__thumbnails light--box--thumbnail">
+                <div class="thumbnail">
+                  <img
+                    src="assets/images/image-product-1-thumbnail.jpg"
+                    alt="thumbnail"
+                    class="thumbnail__img 1"
+                  />
+                </div>
+                <div class="thumbnail">
+                  <img
+                    src="assets/images/image-product-2-thumbnail.jpg"
+                    alt="thumbnail"
+                    class="thumbnail__img 2"
+                  />
+                </div>
+                <div class="thumbnail">
+                  <img
+                    src="assets/images/image-product-3-thumbnail.jpg"
+                    alt="thumbnail"
+                    class="thumbnail__img 3"
+                  />
+                </div>
+                <div class="thumbnail">
+                  <img
+                    src="assets/images/image-product-4-thumbnail.jpg"
+                    alt="thumbnail"
+                    class="thumbnail__img 4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product__images">
+        <div class="product__image__container">
+          <div class="main__image">
+            <img
+              src="assets/images/image-product-1.jpg"
+              alt=""
+              class="main__img"
+            />
+          </div>
+          <div class="image__thumbnails">
+            <div class="thumbnail">
+              <img
+                src="assets/images/image-product-1-thumbnail.jpg"
+                alt="thumbnail"
+                class="thumbnail__img 1"
+              />
+            </div>
+            <div class="thumbnail">
+              <img
+                src="assets/images/image-product-2-thumbnail.jpg"
+                alt="thumbnail"
+                class="thumbnail__img 2"
+              />
+            </div>
+            <div class="thumbnail">
+              <img
+                src="assets/images/image-product-3-thumbnail.jpg"
+                alt="thumbnail"
+                class="thumbnail__img 3"
+              />
+            </div>
+            <div class="thumbnail">
+              <img
+                src="assets/images/image-product-4-thumbnail.jpg"
+                alt="thumbnail"
+                class="thumbnail__img 4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product__details"></div>
     </div>
   </body>
 </html>
